@@ -6,6 +6,7 @@ data "external" "this" {
     makeself_header_bin = "${path.module}/makeself-header.sh"
 
     archive_dir    = var.archive_dir
+    file_name      = var.file_name
     label          = var.workload
     startup_script = var.startup_script
 
@@ -17,6 +18,6 @@ output "checksum" {
   value = data.external.this.result.checksum
 }
 
-output "content" {
-  value = data.external.this.result.content
+output "path" {
+  value = data.external.this.result.path
 }

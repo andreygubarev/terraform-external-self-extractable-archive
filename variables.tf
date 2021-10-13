@@ -26,6 +26,10 @@ variable "startup_script" {
   type = string
 }
 
+variable "file_name" {
+  type = string
+}
+
 variable "needroot" {
   type = bool
 }
