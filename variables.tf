@@ -34,10 +34,6 @@ variable "startup_script" {
   type = string
 }
 
-variable "gzip" {
-  type = bool
-}
-
 variable "needroot" {
   type = bool
 }

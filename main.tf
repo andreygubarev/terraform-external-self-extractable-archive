@@ -10,11 +10,14 @@ data "external" "this" {
     label          = var.label
     startup_script = var.startup_script
 
-    gzip     = var.gzip
     needroot = var.needroot
   }
 }
 
-output "result" {
-  value = data.external.this.result
+output "checksum" {
+  value = data.external.this.result.checksum
+}
+
+output "content" {
+  value = data.external.this.result.content
 }
