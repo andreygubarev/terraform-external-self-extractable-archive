@@ -1,7 +1,10 @@
 data "external" "this" {
-  program = ["sh", "${path.module}/external.sh"]
+  program = ["${path.module}/external.sh"]
 
   query = {
+    makeself_bin        = "${path.module}/makeself.sh"
+    makeself_header_bin = "${path.module}/makeself-header.sh"
+
     archive_dir    = var.archive_dir
     file_name      = var.file_name
     label          = var.label
