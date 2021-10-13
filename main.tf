@@ -7,7 +7,7 @@ data "external" "this" {
 
     archive_dir    = var.archive_dir
     file_name      = var.file_name
-    label          = var.label
+    label          = var.workload
     startup_script = var.startup_script
 
     needroot = var.needroot

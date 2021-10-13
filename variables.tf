@@ -22,14 +22,6 @@ variable "archive_dir" {
   type = string
 }
 
-variable "file_name" {
-  type = string
-}
-
-variable "label" {
-  type = string
-}
-
 variable "startup_script" {
   type = string
 }
