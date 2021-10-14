@@ -2,10 +2,10 @@ data "external" "this" {
   program = ["${path.module}/external.sh"]
 
   query = {
-    makeself_bin        = "${path.module}/makeself.sh"
-    makeself_header_bin = "${path.module}/makeself-header.sh"
+    makeself_bin        = abspath("${path.module}/makeself.sh")
+    makeself_header_bin = abspath("${path.module}/makeself-header.sh")
 
-    archive_dir    = var.archive_dir
+    archive_dir    = abspath(var.archive_dir)
     file_name      = var.file_name
     label          = var.workload
     startup_script = var.startup_script
@@ -14,10 +14,14 @@ data "external" "this" {
   }
 }
 
-output "checksum" {
-  value = data.external.this.result.checksum
-}
-
 output "path" {
   value = data.external.this.result.path
+}
+
+output "content" {
+  value = file(data.external.this.result.path)
+}
+
+output "checksum" {
+  value = filemd5(data.external.this.result.path)
 }

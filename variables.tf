@@ -31,5 +31,6 @@ variable "file_name" {
 }
 
 variable "needroot" {
-  type = bool
+  type    = bool
+  default = false
 }
