@@ -1,23 +1,12 @@
-################################################################################
-# Workload
-################################################################################
-
-variable "workload" {
+variable "label" {
   type = string
 
   validation {
-    condition     = can(regex("^[-a-z]+$", var.workload))
-    error_message = "Invalid value: workload."
+    condition     = can(regex("^[-a-z]+$", var.label))
+    error_message = "Invalid value: label."
   }
 }
 
-locals {
-  workload_prefix = "${var.workload}-"
-}
-
-################################################################################
-# Workload
-################################################################################
 variable "archive_dir" {
   type = string
 }

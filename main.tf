@@ -7,7 +7,7 @@ data "external" "this" {
 
     archive_dir    = abspath(var.archive_dir)
     file_name      = var.file_name
-    label          = var.workload
+    label          = var.label
     startup_script = var.startup_script
 
     needroot = var.needroot
