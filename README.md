@@ -18,3 +18,7 @@ module "bootstrap" {
   startup_script = "./entrypoint.sh"
 }
 ```
+
+# Reference
+
+https://makeself.io/
