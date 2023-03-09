@@ -22,3 +22,4 @@ module "bootstrap" {
 # Reference
 
 https://makeself.io/
+https://registry.terraform.io/providers/hashicorp/external/latest
