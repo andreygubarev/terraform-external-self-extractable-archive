@@ -29,7 +29,7 @@ variable "needroot" {
 
 variable "startup_script" {
   type = string
-  default = "./entrypoint.sh"
+  default = "entrypoint.sh"
 
   description = "The script to run when the archive is extracted."
 }
