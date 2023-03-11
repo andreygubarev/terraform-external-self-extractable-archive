@@ -3,10 +3,6 @@ variable "label" {
   default = "MakeSelf Archive"
 
   description = "The label that describes the archive."
-  validation {
-    condition     = can(regex("^[-a-z]+$", var.label))
-    error_message = "Invalid value: label."
-  }
 }
 
 variable "archive_dir" {

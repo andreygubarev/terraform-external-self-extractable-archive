@@ -28,7 +28,7 @@ cp ${MAKESELF_BIN} makeself.sh
 cp ${MAKESELF_HEADER_BIN} makeself-header.sh
 chmod +x $(basename ${ARCHIVE_DIR})/${STARTUP_SCRIPT}
 
-RUN=( ./makeself.sh --nomd5 --nocrc --tar-extra '--mtime=2019-01-01' --packaging-date '1970-01-01T00:00:00Z' --base64 ${NEEDROOT} $(basename ${ARCHIVE_DIR}) ${FILE_NAME} ${LABEL} ./${STARTUP_SCRIPT}  )
+RUN=( ./makeself.sh --nomd5 --nocrc --tar-extra '--mtime=2019-01-01' --packaging-date '1970-01-01T00:00:00Z' --base64 ${NEEDROOT} $(basename ${ARCHIVE_DIR}) ${FILE_NAME} "${LABEL}" ./${STARTUP_SCRIPT}  )
 echo "${RUN[@]}" >run.log
 
 "${RUN[@]}" >makeself.log 2>&1
