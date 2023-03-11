@@ -1,14 +1,21 @@
-variable "label" {
+variable "description" {
   type = string
   default = "MakeSelf Archive"
 
   description = "The label that describes the archive."
 }
 
-variable "archive_dir" {
+variable "source_dir" {
   type = string
 
   description = "The directory that contains the files to be archived."
+}
+
+variable "entrypoint" {
+  type = string
+  default = "entrypoint.sh"
+
+  description = "The script to run when the archive is extracted."
 }
 
 variable "file_name" {
@@ -25,9 +32,3 @@ variable "needroot" {
   description = "Whether the script needs to be run as root."
 }
 
-variable "startup_script" {
-  type = string
-  default = "entrypoint.sh"
-
-  description = "The script to run when the archive is extracted."
-}
