@@ -1,5 +1,6 @@
 variable "label" {
   type = string
+  default = "MakeSelf Archive"
 
   description = "The label that describes the archive."
   validation {
