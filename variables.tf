@@ -16,6 +16,7 @@ variable "archive_dir" {
 
 variable "file_name" {
   type = string
+  default = "makeself.run"
 
   description = "The name of the archive file."
 }
