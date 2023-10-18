@@ -9,7 +9,6 @@ Quick start:
 ```terraform
 module "bootstrap" {
   source      = "andreygubarev/self-extractable-archive/external"
-  version     = "1.1.0"
   archive_dir = "${path.module}/bootstrap"
 }
 ```
@@ -19,7 +18,7 @@ Advanced usage:
 ```terraform
 module "bootstrap" {
   source  = "andreygubarev/self-extractable-archive/external"
-  version = "1.1.0"
+  version = "1.2.0"
 
   archive_dir    = "${path.module}/bootstrap"
   file_name      = "bootstrap.run"
