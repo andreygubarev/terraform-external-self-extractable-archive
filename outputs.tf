@@ -9,3 +9,7 @@ output "content" {
 output "checksum" {
   value = filemd5(data.external.this.result.path)
 }
+
+output "filename" {
+  value = var.file_name
+}
