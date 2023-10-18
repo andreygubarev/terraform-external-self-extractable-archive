@@ -9,7 +9,7 @@ Quick start:
 ```terraform
 module "bootstrap" {
   source      = "andreygubarev/self-extractable-archive/external"
-  archive_dir = "${path.module}/bootstrap"
+  source_dir = "${path.module}/bootstrap"
 }
 ```
 
@@ -20,7 +20,7 @@ module "bootstrap" {
   source  = "andreygubarev/self-extractable-archive/external"
   version = "1.2.0"
 
-  archive_dir    = "${path.module}/bootstrap"
+  source_dir    = "${path.module}/bootstrap"
   file_name      = "bootstrap.run"
   startup_script = "./entrypoint.sh"
 }
