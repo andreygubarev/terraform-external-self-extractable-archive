@@ -2,6 +2,10 @@
 
 This module creates a self-extractable archive from a directory using [makeself](https://makeself.io/). The archive can be used to bootstrap a new instance using cloud-init.
 
+Module uses `external` provider to run `makeself` command. It creates temporary directory, copies source directory to it, runs `makeself` and returns path to the archive.
+
+Module targets to build hermetic self-extractable archives. It uses `--nomd5 --nocrc` options to disable checksums.
+
 ## Usage
 
 Quick start:
