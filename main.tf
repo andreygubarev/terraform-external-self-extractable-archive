@@ -7,6 +7,7 @@ data "external" "this" {
 
     archive_dir    = abspath(var.source_dir)
     startup_script = var.source_entrypoint
+    dotenv         = var.source_environment
     needroot       = var.needroot
 
     label          = var.description

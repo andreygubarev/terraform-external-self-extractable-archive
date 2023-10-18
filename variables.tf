@@ -18,6 +18,13 @@ variable "source_entrypoint" {
   description = "The script to run when the archive is extracted."
 }
 
+variable "source_environment" {
+  type = string
+  default = ""
+
+  description = "Dotenv file to be included into the archive."
+}
+
 variable "filename" {
   type = string
   default = "makeself.run"
