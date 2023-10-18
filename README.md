@@ -1,4 +1,31 @@
-# Self-extractable archive
+# Terraform Module for Self-Extractable Archive
+
+This module creates a self-extractable archive from a directory using [makeself](https://makeself.io/). The archive can be used to bootstrap a new instance using cloud-init.
+
+## Usage
+
+Quick start:
+
+```terraform
+module "bootstrap" {
+  source      = "andreygubarev/self-extractable-archive/external"
+  version     = "1.1.0"
+  archive_dir = "${path.module}/bootstrap"
+}
+```
+
+Advanced usage:
+
+```terraform
+module "bootstrap" {
+  source  = "andreygubarev/self-extractable-archive/external"
+  version = "1.1.0"
+
+  archive_dir    = "${path.module}/bootstrap"
+  file_name      = "bootstrap.run"
+  startup_script = "./entrypoint.sh"
+}
+```
 
 ## Prerequisite
 
@@ -8,18 +35,9 @@ brew install gnu-tar
 export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 ```
 
-## Usage Example
-```terraform
-module "bootstrap" {
-  ...
 
-  archive_dir    = "${path.module}/bootstrap"
-  file_name      = "bootstrap.run"
-  startup_script = "./entrypoint.sh"
-}
-```
 
 # Reference
 
-https://makeself.io/
-https://registry.terraform.io/providers/hashicorp/external/latest
+- https://makeself.io/
+- https://registry.terraform.io/providers/hashicorp/external/latest
