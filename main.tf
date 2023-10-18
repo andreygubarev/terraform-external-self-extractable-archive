@@ -10,7 +10,7 @@ data "external" "this" {
     dotenv         = var.source_environment
     needroot       = var.needroot
 
-    label          = var.description
-    file_name      = var.filename
+    label     = var.description
+    file_name = var.filename
   }
 }

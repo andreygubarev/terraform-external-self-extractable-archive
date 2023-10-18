@@ -3,7 +3,8 @@ output "path" {
 }
 
 output "content" {
-  value = file(data.external.this.result.path)
+  value     = file(data.external.this.result.path)
+  sensitive = true
 }
 
 output "checksum" {
