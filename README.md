@@ -54,8 +54,7 @@ Example `entrypoint.sh`:
 ```bash
 #!/bin/bash
 set -euxo pipefail
-# shellcheck disable=SC2046
-test -f .env && export $(xargs < .env)
+source .env
 
 # ...
 ```
