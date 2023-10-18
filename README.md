@@ -20,14 +20,29 @@ module "bootstrap" {
 Advanced usage:
 
 ```terraform
-module "bootstrap" {
+module "userdata" {
   source  = "andreygubarev/self-extractable-archive/external"
   version = "1.2.0"
 
-  label          = "bootstrap"                 # Description of the archive
-  source_dir     = "${path.module}/bootstrap"  # Directory to be archived
+  label          = "User Data"                 # Description of the archive
+  source_dir     = "${path.module}/userdata"   # Directory to be archived
   entrypoint     = "entrypoint.sh"             # Entrypoint script, relative to source_dir, defaults to "entrypoint.sh"
-  file_name      = "bootstrap.run"             # Name of self-extractable archive
+  file_name      = "userdata.run"              # Name of self-extractable archive
+}
+
+data "cloudinit_config" "this" {
+  gzip          = true
+  base64_encode = true
+
+  part {
+    filename     = basename(module.userdata.path)
+    content_type = "text/x-shellscript"
+    content      = file(module.userdata.path)
+  }
+}
+
+output "cloudconfig" {
+  value = data.cloudinit_config.this.rendered
 }
 ```
 
