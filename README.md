@@ -20,9 +20,10 @@ module "bootstrap" {
   source  = "andreygubarev/self-extractable-archive/external"
   version = "1.2.0"
 
-  source_dir    = "${path.module}/bootstrap"
-  file_name      = "bootstrap.run"
-  startup_script = "./entrypoint.sh"
+  label          = "bootstrap"                 # Description of the archive
+  source_dir     = "${path.module}/bootstrap"  # Directory to be archived
+  entrypoint     = "entrypoint.sh"             # Entrypoint script, relative to source_dir, defaults to "entrypoint.sh"
+  file_name      = "bootstrap.run"             # Name of self-extractable archive
 }
 ```
 
