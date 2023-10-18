@@ -11,14 +11,14 @@ variable "source_dir" {
   description = "The directory that contains the files to be archived."
 }
 
-variable "entrypoint" {
+variable "source_entrypoint" {
   type = string
   default = "entrypoint.sh"
 
   description = "The script to run when the archive is extracted."
 }
 
-variable "file_name" {
+variable "filename" {
   type = string
   default = "makeself.run"
 

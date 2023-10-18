@@ -24,10 +24,10 @@ module "userdata" {
   source  = "andreygubarev/self-extractable-archive/external"
   version = "1.2.0"
 
-  label          = "User Data"                 # Description of the archive
-  source_dir     = "${path.module}/userdata"   # Directory to be archived
-  entrypoint     = "entrypoint.sh"             # Entrypoint script, relative to source_dir, defaults to "entrypoint.sh"
-  file_name      = "userdata.run"              # Name of self-extractable archive
+  description       = "User Data"                 # Description of the archive
+  source_dir        = "${path.module}/userdata"   # Directory to be archived
+  source_entrypoint = "entrypoint.sh"             # Entrypoint script, relative to source_dir, defaults to "entrypoint.sh"
+  filename         = "userdata.run"              # Name of self-extractable archive
 }
 
 data "cloudinit_config" "this" {
@@ -41,7 +41,7 @@ data "cloudinit_config" "this" {
   }
 }
 
-output "cloudconfig" {
+output "userdata" {
   value = data.cloudinit_config.this.rendered
 }
 ```

@@ -11,5 +11,5 @@ output "checksum" {
 }
 
 output "filename" {
-  value = var.file_name
+  value = var.filename
 }

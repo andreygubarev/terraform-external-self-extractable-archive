@@ -6,10 +6,10 @@ data "external" "this" {
     makeself_header_bin = abspath("${path.module}/makeself-header.sh")
 
     archive_dir    = abspath(var.source_dir)
-    startup_script = var.entrypoint
+    startup_script = var.source_entrypoint
     needroot       = var.needroot
 
     label          = var.description
-    file_name      = var.file_name
+    file_name      = var.filename
   }
 }
