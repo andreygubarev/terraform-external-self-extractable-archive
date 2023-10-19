@@ -1,3 +1,9 @@
+locals {
+  source_environment = join("\n", [
+    for k, v in var.source_environment : "${k}=${v}"
+  ])
+}
+
 data "external" "this" {
   program = ["${path.module}/external.sh"]
 
@@ -7,7 +13,7 @@ data "external" "this" {
 
     archive_dir    = abspath(var.source_dir)
     startup_script = var.source_entrypoint
-    dotenv         = var.source_environment
+    dotenv         = local.source_environment
     needroot       = var.needroot
 
     label     = var.description

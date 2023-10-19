@@ -19,10 +19,10 @@ variable "source_entrypoint" {
 }
 
 variable "source_environment" {
-  type    = string
-  default = ""
+  type    = map(string)
+  default = {}
 
-  description = "Dotenv file to be included into the archive."
+  description = "The environment variables to set when the archive is extracted."
 }
 
 variable "filename" {
