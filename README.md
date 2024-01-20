@@ -28,9 +28,9 @@ module "userdata" {
   filename           = "userdata.run"              # Name of self-extractable archive
   source_dir         = "${path.module}/userdata"   # Directory to be archived
   source_entrypoint  = "entrypoint.sh"             # Entrypoint script, relative to source_dir, defaults to "entrypoint.sh"
-  source_environment = <<EOT
-  FOO=BAR
-  EOT
+  source_environment = {
+    FOO = "BAR"                                    # Environment variables to be exported, defaults to {}
+  }
 }
 
 data "cloudinit_config" "this" {
