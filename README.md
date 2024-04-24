@@ -22,7 +22,7 @@ Advanced usage:
 ```terraform
 module "userdata" {
   source  = "andreygubarev/self-extractable-archive/external"
-  version = "1.2.0"
+  version = "1.4.1"
 
   description        = "User Data"                 # Description of the archive
   filename           = "userdata.run"              # Name of self-extractable archive
